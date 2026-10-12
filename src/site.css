@@ -143,8 +143,10 @@ em{font-family:Georgia,"Times New Roman",serif;font-weight:400}
 .footer-contact-links{border-top:1px solid #444d43}
 .footer-contact-links a{display:grid;grid-template-columns:100px minmax(0,1fr) 20px;align-items:center;gap:18px;min-height:58px;border-bottom:1px solid #444d43;font-size:12px;font-weight:600}
 .footer-contact-links a span:not(.arrow){color:#c1c9bd;font-weight:400;overflow-wrap:anywhere}
-.footer-contact-links a:hover,.footer-save:hover{color:var(--lime)}
-.footer-save{grid-column:2;display:inline-flex;align-items:center;justify-content:space-between;gap:24px;justify-self:start;min-height:44px;padding:0 16px;border:1px solid #f1f2ef;border-radius:99px;background:none;color:#f1f2ef;font-size:12px;font-weight:600}
+.footer-contact-links a:hover{color:var(--lime)}
+.footer-save{grid-column:2;display:inline-flex;align-items:center;justify-content:space-between;gap:24px;justify-self:start;min-height:48px;padding:0 20px;border:1px solid var(--lime);border-radius:99px;background:var(--lime);box-shadow:0 8px 24px #83d7422b;color:var(--ink);font-size:12px;font-weight:700;transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .12s ease}
+.footer-save:hover{border-color:var(--paper);background:var(--paper);box-shadow:0 10px 28px #83d74238;color:var(--ink)}
+.footer-save:active{transform:scale(.98)}
 .closing-foot{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-top:1px solid #444d43;font-size:11px}
 .closing-foot a:hover{color:var(--lime)}
 .closing-wordmark{width:100%;margin:58px auto 0}

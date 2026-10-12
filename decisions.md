@@ -6,6 +6,8 @@ Ship only the homepage, Starter demo, and Business demo. Public assets are limit
 
 ## Entries
 
+- 2026-10-13: Use the existing SmarTap lime for the primary footer CTA rather than introducing another accent; retain the button's current placement and behavior.
+
 - 2026-10-13: Keep the package swipe cue static, text-led, and mobile-only; reuse the existing arrow component and leave scroll snapping unchanged.
 
 - 2026-10-12: Use `hero-editorial-mobile.png` at 760px and below through native `<picture>` selection; keep `hero-editorial-wide.png` as the desktop fallback.

@@ -6,6 +6,8 @@ Production build succeeds with exactly three HTML pages. The homepage hero uses 
 
 ## Entries
 
+- 2026-10-13: Verified the highlighted footer CTA at 1440×1000 and 390×844. The button remains prominent, readable, and proportionate; production build and design scan completed.
+
 - 2026-10-13: Verified the package swipe cue at an emulated 390×844 viewport. It appears below the cards, the next card remains visible at the edge, and the production build passes.
 
 - 2026-10-12: Verified the 940×1672 mobile hero in-browser at 500×844. The full subject, menu, wordmark, supporting copy, and CTA remain visible; the desktop source remains unchanged.

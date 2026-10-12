@@ -2,9 +2,11 @@
 
 ## Current State Summary
 
-The SmarTap marketing site and its Starter and Business demos are ready for shipping. The full-bleed homepage hero uses dedicated panoramic desktop and portrait mobile images, plus a shared responsive grid, strong text contrast, and tight CTA grouping. The homepage retains horizontal mobile packages with an explicit swipe cue and animated FAQ chevrons. The tabletop card photo uses the compact SmarTap mark. The profile app in plan.md remains proposed work.
+The SmarTap marketing site and its Starter and Business demos are ready for shipping. The full-bleed homepage hero uses dedicated panoramic desktop and portrait mobile images, plus a shared responsive grid, strong text contrast, and tight CTA grouping. The homepage retains horizontal mobile packages with an explicit swipe cue, animated FAQ chevrons, and a highlighted lime save-contact CTA in the footer. The tabletop card photo uses the compact SmarTap mark. The profile app in plan.md remains proposed work.
 
 ## Entries
+
+- 2026-10-13: Promoted the footer save-contact action with a filled lime treatment, larger touch target, and clear hover and pressed states.
 
 - 2026-10-13: Added a mobile-only “Swipe to view more packages” cue beneath the horizontal package carousel.
 
