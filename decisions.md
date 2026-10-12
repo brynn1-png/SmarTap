@@ -2,9 +2,17 @@
 
 ## Current State Summary
 
-Ship only the homepage, Starter demo, and Business demo. Public assets are limited to files referenced by those pages. Keep the AI harness, project logs, proposed product plan, and Starter Light/Dark modes. Use existing dependencies without adding cleanup tooling.
+Ship only the homepage, Starter demo, and Business demo. Public assets are limited to files referenced by those pages. The tabletop card photo uses the compact SmarTap mark; other branding assets remain unchanged. Keep the AI harness, project logs, proposed product plan, and Starter Light/Dark modes.
 
 ## Entries
+
+- 2026-10-12: User selected the earlier generated card version shown in their screenshot. Restored that exact file without further positioning or regeneration.
+
+- 2026-10-12: Used measured image coordinates for final placement: card center (550.0, 779.8) and mark bounding-box center (549.5, 780.0). Used the generated blank card texture as the base and preserved the existing compact mark pixels.
+
+- 2026-10-12: Centered the compact mark optically within the photographed card face rather than relying on its first placement.
+
+- 2026-10-12: Used the existing compact SVG mark as the exact reference for the photographic edit. Kept the same asset path so the homepage and Starter demo receive the update without code changes.
 
 - 2026-10-12: User confirmed removing design previews. Removed superseded original photos as part of launch cleanup; branded runtime photos remain. Removed obsolete design QA reports with their captures to avoid stale verification claims.
 

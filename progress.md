@@ -2,9 +2,17 @@
 
 ## Current State Summary
 
-Launch cleanup is complete for the SmarTap marketing site and its Starter and Business demos. Removed design previews, unused public assets, archived bundles, and obsolete QA artifacts. The homepage retains horizontal mobile packages and animated FAQ chevrons. The profile app in plan.md remains proposed work.
+The SmarTap marketing site and its Starter and Business demos are ready for shipping. The homepage retains horizontal mobile packages and animated FAQ chevrons. The tabletop card photo now uses the compact SmarTap mark instead of the full wordmark. The profile app in plan.md remains proposed work.
 
 ## Entries
+
+- 2026-10-12: Restored the exact earlier compact-mark card image selected by the user from the conversation preview.
+
+- 2026-10-12: Measured the photographed card and placed the compact mark at its geometric center, replacing the earlier visually offset version.
+
+- 2026-10-12: Repositioned the compact mark toward the lower-right so it is visually centered on the tabletop card.
+
+- 2026-10-12: Replaced the large wordmark printed on the tabletop card photo with the compact lime SmarTap mark while preserving the photo composition and dimensions.
 
 - 2026-10-12: Removed preview routes and their state/styles, unused photos and logos, reference bundle, old screenshots/scripts/reports, and desktop.ini. Updated README, architecture, context, and ignore rules.
 

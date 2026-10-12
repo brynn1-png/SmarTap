@@ -2,9 +2,17 @@
 
 ## Current State Summary
 
-Production build succeeds with exactly three HTML pages. All remaining public assets are referenced, source asset/page references resolve, and built resource references resolve. Dependency tree and whitespace checks passed. Browser interaction and visual verification were not performed during cleanup.
+Production build succeeds with exactly three HTML pages. The shared tabletop card photo uses the exact compact-mark version selected by the user and retains its 1122×1402 dimensions. All remaining public assets are referenced, and source and built resource references resolve.
 
 ## Entries
+
+- 2026-10-12: Restored the selected earlier image byte-for-byte and verified its SHA-256 hash before rebuilding.
+
+- 2026-10-12: Visually inspected the full corrected image and measured the final mark within 0.5 px horizontally and 0.2 px vertically of the card center. The asset remains 1122×1402.
+
+- 2026-10-12: Corrected the compact mark placement after visual review; the replacement retains the 1122×1402 source dimensions.
+
+- 2026-10-12: Replaced the full wordmark in `public/card-editorial-branded.png` with the compact lime mark. Inspected the generated edit and confirmed the output retained the source dimensions before replacing the shared asset.
 
 - 2026-10-12: Removed 11,349,169 bytes of obsolete assets and QA artifacts, plus preview source and stale reports. Unused public assets account for 4,783,556 bytes no longer deployed; Starter CSS also shrank from 10.08 kB to 4.39 kB. Rebuilt dist and checked page/resource references and absence of removed artifacts.
 
