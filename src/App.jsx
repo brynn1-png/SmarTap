@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 import { siFacebook, siInstagram } from "simple-icons";
 
 const demoUrl = "/demo/index.html";
@@ -36,6 +36,15 @@ const questions = [
   { question: "Can I see a complete example?", answer: "Yes. Explore Lloyd’s Starter card or the fictional Morrow Coffee Business showcase to see what each page could look like." },
   { question: "Which package does Lloyd’s example show?", answer: "Lloyd’s profile shows Starter. Business keeps those contact actions and adds a personalized showcase, as shown by the fictional coffee shop demo. Executive includes a fully customized landing page." },
 ];
+
+function FaqItem({ question, answer }) {
+  const [open, setOpen] = useState(false);
+  const answerId = useId();
+  return <div className="faq-item">
+    <button className="faq-trigger" type="button" aria-expanded={open} aria-controls={answerId} onClick={() => setOpen(!open)}>{question}<svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></button>
+    <div className="faq-answer" id={answerId} inert={!open}><div><p>{answer}</p></div></div>
+  </div>;
+}
 
 function Brand({ className = "" }) {
   return <a className={`brand ${className}`} href="#top" aria-label="SmarTap, back to top"><img src="/smartap-logo.svg" alt="" /></a>;
@@ -77,7 +86,7 @@ function App() {
       <main>
         <section className="hero-shell" aria-labelledby="hero-title">
           <div className="hero-frame">
-            <img className="hero-image" src="/hero-editorial.png" alt="A professional holding a digital card and phone" />
+            <img className="hero-image" src="/hero-editorial-branded.png" alt="A professional holding a SmarTap card and phone" />
             <div className="hero-shade" />
             <header className="site-header">
               <div className="nav-capsule">
@@ -110,7 +119,7 @@ function App() {
           <div className="section-marker"><span>01 / About</span><span>SmarTap</span></div>
           <h2 className="intro-statement" id="intro-title">“A brief hello can become a <em>lasting connection.</em>”</h2>
           <div className="intro-grid">
-            <figure className="intro-photo"><img src="/card-editorial.png" alt="A contactless card beside a smartphone" /><figcaption>One card. More ways to connect.</figcaption></figure>
+            <figure className="intro-photo"><img src="/card-editorial-branded.png" alt="A SmarTap card beside a smartphone" /><figcaption>One card. More ways to connect.</figcaption></figure>
             <div className="intro-copy">
               <span className="micro-label">The idea</span>
               <p>A SmarTap card opens your digital profile in someone’s phone browser. They can save your contact, reach out, find your location, or follow a link while the conversation is still fresh.</p>
@@ -140,10 +149,14 @@ function App() {
           <div className="packages-inner page-section">
             <div className="section-marker"><span>04 / Packages</span><span>Find your fit</span></div>
             <div className="packages-heading"><h2 id="packages-title">A card for <em>your next step.</em></h2><p>Start with the essentials or make your introduction entirely your own.</p></div>
-            <div className="packages-grid">
+            <div className="packages-grid" role="region" aria-label="Packages" tabIndex={0}>
               {packages.map((offer, index) => <article className="package-card" key={offer.name}>
                 <div className="package-card-top"><span className="micro-label">0{index + 1} / SmarTap</span><span className="package-number">0{index + 1}</span></div>
-                <div className="package-card-main"><h3>{offer.name} <span>Package</span></h3><p className="package-price">{offer.price}</p><p className="package-description">{offer.description}</p></div>
+                <div className="package-card-main">
+                  <div><h3>{offer.name} <span>Package</span></h3><p className="package-price">{offer.price}</p></div>
+                  <img className="package-card-image" src="/phones-transparent.png" alt="" loading="lazy" />
+                  <p className="package-description">{offer.description}</p>
+                </div>
                 <div className="package-card-foot"><p>{offer.detail}</p>{offer.demo && <a href={offer.demo === true ? demoUrl : offer.demo}>Explore the {offer.name} demo <Arrow diagonal /></a>}</div>
               </article>)}
             </div>
@@ -153,7 +166,7 @@ function App() {
 
         <section className="questions-section page-section" id="questions" aria-labelledby="questions-title">
           <div className="section-marker"><span>05 / FAQ</span><span>Good to know</span></div>
-          <div className="questions-grid"><div><h2 id="questions-title">Frequently asked <em>questions.</em></h2><p>Just the essentials before you tap.</p></div><div className="questions-list">{questions.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div>
+          <div className="questions-grid"><div><h2 id="questions-title">Frequently asked <em>questions.</em></h2><p>Just the essentials before you tap.</p></div><div className="questions-list">{questions.map(({ question, answer }) => <FaqItem key={question} question={question} answer={answer} />)}</div></div>
         </section>
 
       </main>

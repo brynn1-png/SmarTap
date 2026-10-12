@@ -3,3 +3,7 @@ dist/
 .chrome-*/
 *-mobile*.png
 site-*.png
+desktop.ini
+.DS_Store
+.qa/
+design-review/
