@@ -2,6 +2,7 @@ node_modules/
 dist/
 .chrome-*/
 *-mobile*.png
+!public/hero-editorial-mobile.png
 site-*.png
 desktop.ini
 .DS_Store

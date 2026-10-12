@@ -84,9 +84,12 @@ function App() {
   return (
     <div className="site" id="top">
       <main>
-        <section className="hero-shell" aria-labelledby="hero-title">
+        <section aria-labelledby="hero-title">
           <div className="hero-frame">
-            <img className="hero-image" src="/hero-editorial-branded.png" alt="A professional holding a SmarTap card and phone" />
+            <picture>
+              <source media="(max-width: 760px)" srcSet="/hero-editorial-mobile.png" />
+              <img className="hero-image" src="/hero-editorial-wide.png" alt="A professional holding a SmarTap card and phone" />
+            </picture>
             <div className="hero-shade" />
             <header className="site-header">
               <div className="nav-capsule">
@@ -160,6 +163,7 @@ function App() {
                 <div className="package-card-foot"><p>{offer.detail}</p>{offer.demo && <a href={offer.demo === true ? demoUrl : offer.demo}>Explore the {offer.name} demo <Arrow diagonal /></a>}</div>
               </article>)}
             </div>
+            <p className="packages-swipe-hint">Swipe to view more packages <Arrow /></p>
             <p className="packages-note">Explore the Starter card and a fictional coffee shop Business page. Executive pages are customized for each client.</p>
           </div>
         </section>

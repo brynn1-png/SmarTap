@@ -2,9 +2,23 @@
 
 ## Current State Summary
 
-The SmarTap marketing site and its Starter and Business demos are ready for shipping. The homepage retains horizontal mobile packages and animated FAQ chevrons. The tabletop card photo now uses the compact SmarTap mark instead of the full wordmark. The profile app in plan.md remains proposed work.
+The SmarTap marketing site and its Starter and Business demos are ready for shipping. The full-bleed homepage hero uses dedicated panoramic desktop and portrait mobile images, plus a shared responsive grid, strong text contrast, and tight CTA grouping. The homepage retains horizontal mobile packages with an explicit swipe cue and animated FAQ chevrons. The tabletop card photo uses the compact SmarTap mark. The profile app in plan.md remains proposed work.
 
 ## Entries
+
+- 2026-10-13: Added a mobile-only “Swipe to view more packages” cue beneath the horizontal package carousel.
+
+- 2026-10-12: Added the approved portrait mobile hero and served it below 760px through a responsive picture source.
+
+- 2026-10-12: Applied a subtle 6% desktop zoom to the panoramic hero while retaining the existing mobile crop.
+
+- 2026-10-12: Replaced the homepage hero source with an approved panoramic extension that preserves more of the subject on wide screens; retained the earlier image for the Starter demo.
+
+- 2026-10-12: Refined the full-bleed homepage hero hierarchy, alignment, overlay contrast, CTA grouping, and responsive spacing without changing its content or image.
+
+- 2026-10-12: Made the homepage hero fully edge-to-edge by removing its shell background and spacing, width cap, rounded frame, and breakpoint height overrides.
+
+- 2026-10-12: Changed the homepage hero backing surface to `#171a17` and removed the white frame border on desktop and mobile.
 
 - 2026-10-12: Restored the exact earlier compact-mark card image selected by the user from the conversation preview.
 

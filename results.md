@@ -2,9 +2,23 @@
 
 ## Current State Summary
 
-Production build succeeds with exactly three HTML pages. The shared tabletop card photo uses the exact compact-mark version selected by the user and retains its 1122×1402 dimensions. All remaining public assets are referenced, and source and built resource references resolve.
+Production build succeeds with exactly three HTML pages. The homepage hero uses verified desktop and mobile image sources; the mobile composition was checked at 500×844 and the desktop composition at 1440×1000. The shared tabletop card photo uses the exact compact-mark version selected by the user and retains its 1122×1402 dimensions. All remaining public assets are referenced, and source and built resource references resolve.
 
 ## Entries
+
+- 2026-10-13: Verified the package swipe cue at an emulated 390×844 viewport. It appears below the cards, the next card remains visible at the edge, and the production build passes.
+
+- 2026-10-12: Verified the 940×1672 mobile hero in-browser at 500×844. The full subject, menu, wordmark, supporting copy, and CTA remain visible; the desktop source remains unchanged.
+
+- 2026-10-12: Verified the 6% desktop hero zoom at wide and standard desktop sizes; the subject's hairline, shoulders, hands, card, phone, and jacket sides remain visible.
+
+- 2026-10-12: Connected the approved 1774×887 panoramic hero asset. Production build passed, and browser captures confirmed improved subject visibility across wide desktop, standard desktop, and mobile layouts.
+
+- 2026-10-12: Verified the refined hero with a production build and desktop/mobile browser captures. Navigation, copy, wordmark, CTA, subject, and card remain visible without overlap.
+
+- 2026-10-12: Converted the framed hero to a full-bleed viewport hero and removed obsolete responsive frame rules.
+
+- 2026-10-12: Updated the hero shell and frame styles; source review confirmed no responsive border override remains.
 
 - 2026-10-12: Restored the selected earlier image byte-for-byte and verified its SHA-256 hash before rebuilding.
 

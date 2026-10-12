@@ -2,9 +2,23 @@
 
 ## Current State Summary
 
-Ship only the homepage, Starter demo, and Business demo. Public assets are limited to files referenced by those pages. The tabletop card photo uses the compact SmarTap mark; other branding assets remain unchanged. Keep the AI harness, project logs, proposed product plan, and Starter Light/Dark modes.
+Ship only the homepage, Starter demo, and Business demo. Public assets are limited to files referenced by those pages. The homepage uses separate approved panoramic desktop and portrait mobile hero images with one responsive left alignment for navigation and copy. The Starter demo retains the earlier hero image. The tabletop card photo uses the compact SmarTap mark; other branding assets remain unchanged. Keep the AI harness, project logs, proposed product plan, and Starter Light/Dark modes.
 
 ## Entries
+
+- 2026-10-13: Keep the package swipe cue static, text-led, and mobile-only; reuse the existing arrow component and leave scroll snapping unchanged.
+
+- 2026-10-12: Use `hero-editorial-mobile.png` at 760px and below through native `<picture>` selection; keep `hero-editorial-wide.png` as the desktop fallback.
+
+- 2026-10-12: Limited the panoramic hero's 6% scale increase to desktop; mobile remains unscaled because its narrow crop already presents the subject closely.
+
+- 2026-10-12: Added the approved generated image as `hero-editorial-wide.png` instead of overwriting `hero-editorial-branded.png`, because the latter remains in use by the Starter demo.
+
+- 2026-10-12: Preserved the hero's image-led concept and React structure; improved it through focused CSS alignment, contrast, spacing, and CTA refinements with no new dependency.
+
+- 2026-10-12: The hero image now defines the entire section surface at full width and `100svh`; mobile retains only its focal-position adjustment.
+
+- 2026-10-12: Kept the hero shell spacing and rounded corners while replacing its sage backing with dark ink and removing the decorative white border.
 
 - 2026-10-12: User selected the earlier generated card version shown in their screenshot. Restored that exact file without further positioning or regeneration.
 
