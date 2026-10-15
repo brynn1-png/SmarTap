@@ -6,12 +6,18 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node scripts/verify-profile-validation.mjs && node scripts/verify-admin-profile.mjs",
+    "test:admin-ui": "node scripts/verify-admin-ui.mjs && node scripts/verify-admin-inventory.mjs && node scripts/verify-profile-editor.mjs && node scripts/verify-editor-ui.mjs",
+    "test:convex": "node scripts/verify-convex.mjs"
   },
   "devDependencies": {
+    "playwright": "^1.64.0",
     "vite": "^7.1.0"
   },
   "dependencies": {
+    "@convex-dev/auth": "^0.0.96",
+    "convex": "^1.46.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "simple-icons": "^16.34.0"
