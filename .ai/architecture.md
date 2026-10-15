@@ -26,6 +26,6 @@ Profile and marketing content is defined in the React source. Components use loc
 - Commands: `npm run dev`, `npm run build`, `npm run preview`. The build output is `dist/`.
 - There is no configured test, lint, or type-check script. Verify changes with the relevant available checks and direct inspection.
 - Do not place real credentials in source or Vite public environment variables. Any future admin or profile data service must enforce access at its own trust boundary; a hidden UI route alone is not authorization.
-- No deployment provider configuration is present in the current implementation. The Vercel and Supabase choices in `plan.md` are proposals.
+- No deployment provider configuration is present in the current implementation. The Vercel and Convex choices in `plan.md` are proposals.
 
 Update this file when the actual architecture changes. Check source and configuration before relying on it.

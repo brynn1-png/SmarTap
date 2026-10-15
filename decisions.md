@@ -2,9 +2,39 @@
 
 ## Current State Summary
 
-Ship only the homepage, Starter demo, and Business demo. Public assets are limited to files referenced by those pages. The homepage uses separate approved panoramic desktop and portrait mobile hero images with one responsive left alignment for navigation and copy. The Starter demo retains the earlier hero image. The tabletop card photo uses the compact SmarTap mark; other branding assets remain unchanged. Keep the AI harness, project logs, proposed product plan, and Starter Light/Dark modes.
+Ship only the homepage, Starter demo, and Business demo in the current main checkout. The client-page system under development uses the existing TAGATAP template, Convex project `smartap-a93dc`, an admin dashboard, and stable `https://smartap-png.vercel.app/p/:slug` URLs. Track implementation in `.ai/tasks/TASK-001-client-page-system.md`. Phase 1 and the backend foundation are in isolated worktrees. The project's development deployment is `courteous-falcon-337`.
 
 ## Entries
+
+- 2026-10-16: Reserve `/tagatap/` for renderer build assets so TAGATAP and the SmarTap marketing/admin build can share one browser origin without `/assets` collisions. Use Vercel's external rewrite for `/p/:slug` and `/tagatap/:path*`; set `TAGATAP_ORIGIN` per SmarTap deployment through Vercel environment settings. Keep the canonical copied NFC URL at `https://smartap-png.vercel.app/p/:slug`. Production promotion waits for a real preview review.
+
+- 2026-10-16: The Phase 5 editor uses the backend's pure profile normalizer for client-side validation, then protected Convex mutations as the authority. Draft preview stays in a same-origin iframe and waits for TAGATAP's `smartap:ready` message before sending profile data; it times out with retry when routing is unavailable. Uploaded images are deleted on replacement when unreferenced, and failed attachments request protected cleanup. The canonical URL remains fixed to `https://smartap-png.vercel.app/p/:slug`.
+
+- 2026-10-16: Keep Phase 4 dashboard actions limited to working behavior. Create/edit/draft-preview controls depend on the Phase 5 editor and same-origin preview integration, so the inventory currently presents status and stable path without dead links. Use the existing SmarTap admin visual language for the responsive list and recovery states.
+
+- 2026-10-16: TAGATAP loads public `/p/:slug` records through Convex's published-only query using a public `VITE_CONVEX_URL`. The admin draft preview remains a same-origin message flow with no draft query. Share Page uses the current browser origin plus the published slug, so the Phase 6 same-origin rewrite will produce canonical NFC links.
+
+- 2026-10-16: Use Convex CLI test identities for development authorization checks so the admin password stays private. Test data is clearly labeled and removed after live lifecycle verification; a real signed-in non-admin account still needs separate verification.
+
+- 2026-10-15: After confirming the first development admin exists, remove the one-time `ADMIN_SETUP_CODE` as originally planned. Keep `ADMIN_EMAIL` and Convex Auth keys for normal sign-in; production will need separate provisioning.
+
+- 2026-10-15: Keep the generic client-facing setup failure to avoid revealing account and setup-code checks to visitors. Use secret-free, temporary backend diagnostics for the development signup failure; remove them immediately after diagnosis.
+
+- 2026-10-15: Move the admin access shell ahead of the public renderer so the first admin can securely choose a password and Phase 2 signed-in checks can proceed. Preserve the existing SmarTap Inter/lime visual language. Keep `ADMIN_SETUP_CODE` only in Convex development environment and remove it after first signup; no password or code enters source or logs.
+
+- 2026-10-15: Restrict development admin access to the user's supplied Gmail address through Convex `ADMIN_EMAIL`; retain a temporary setup code for account creation and remove it afterward. Password-only Convex Auth does not require `SITE_URL` in the current manual setup guidance.
+
+- 2026-10-15: The user confirmed using `smartap-a93dc`, the project identified by their Convex dashboard URL. Continue with `courteous-falcon-337` for development; no project switch is needed. The admin email remains unspecified.
+
+- 2026-10-15: Request the earlier Convex project's HTTPS dashboard page URL to identify the project and team before linking it. A `.convex.cloud` deployment URL alone is not the requested project identity. Keep the setup code mandatory for signup and removable afterward without affecting sign-in.
+
+- 2026-10-15: User confirmed TAGATAP permission/access, the existing SmarTap Vercel origin, Convex Auth beta with email/password, both ordinary and transparent-cutout portraits, and a publication minimum of name, portrait, background, and one contact method. Save draft then Publish is retained. The empty TAGATAP preview shell accepts profile data only by same-origin iframe message from the admin browser.
+
+- 2026-10-15: Use a server-side admin email allowlist and temporary setup code for the first Convex Auth password account; remove the code after provisioning. Keep credentials out of source and logs. The exact admin email and final Convex project are pending user input. A new project `smartap-a93dc` was created after the user selected “Create a new SmarTap Convex project,” but the user subsequently said to use an earlier project; do not add real data to the new project.
+
+- 2026-10-15: Keep product requirements in `plan.md` and track execution in one task checklist under `.ai/tasks/`. Phase 0 records unresolved decisions before either repository's implementation begins.
+
+- 2026-10-15: For the proposed first release, serve people only; adapt the existing TAGATAP repository directly as the single template; keep marketing/admin in this repository; use Convex for records and image storage, with Convex Auth proposed for login. Use one canonical path URL per person so NFC cards keep working after edits. Save draft then Publish remains a plan assumption to confirm before implementation.
 
 - 2026-10-13: Use the existing SmarTap lime for the primary footer CTA rather than introducing another accent; retain the button's current placement and behavior.
 
