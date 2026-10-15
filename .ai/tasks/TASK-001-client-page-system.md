@@ -2,7 +2,7 @@
 
 > **For future implementation:** Work through one phase at a time. Follow `.ai/rules.md` and `.ai/workflow.md`; get approval for the phase's concrete code plan before changing code. Do not commit or push unless the user requests it.
 
-**Status:** In progress — Phases 1 and 3 verified in isolated TAGATAP worktree; Phase 2 admin lifecycle verified in development; Phase 4/5 admin UI implemented in an isolated SmarTap worktree but signed-in browser and same-origin deployment verification pending
+**Status:** In progress — the isolated TAGATAP renderer preview passes protected browser checks; the SmarTap and TAGATAP previews are deployed, but their combined protected rewrite and signed-in admin flow await browser verification. Production remains pending.
 **Created:** 2026-10-15
 **Goal:** An admin can publish a personal TAGATAP page with a permanent SmarTap URL that works from an NFC card.
 **Architecture:** This repository hosts the marketing site and admin dashboard. The existing TAGATAP repository hosts one data-driven public template. Both use a shared Convex backend per environment; an explicit Vercel rewrite serves TAGATAP pages at `/p/:slug` on the canonical site.
@@ -34,7 +34,7 @@
 **Deliverable:** A concrete environment and access decision record. These checks gate implementation in the relevant repository.
 
 - [x] Confirm the TAGATAP creator permits the intended adaptation and that the project has write/deployment access (user attestation; remote write has not been tested). Its inspected repository had no license file.
-- [ ] Choose the canonical production origin and identify the Vercel project that owns it. Origin is `https://smartap-png.vercel.app` (HTTP 200 verified); Vercel project ownership/access remains to be verified.
+- [x] Choose the canonical production origin and identify the Vercel project that owns it. Origin is `https://smartap-png.vercel.app`; authenticated Vercel CLI inspection identified project `taga-tap` in team `brynn1-pngs-projects`.
 - [x] Confirm Convex Auth beta and email/password for the first admin. Use a server-side admin email allowlist and a temporary setup code to create the first account; remove the code afterward. Development account provisioned; production remains pending.
 - [x] Confirm Save draft then Publish. Reserve the slug on draft creation and program an NFC card only after publication.
 - [x] Support both ordinary photos and transparent cutouts. Require name, portrait, background, and one contact method for publication.
@@ -115,8 +115,8 @@
 
 **Repositories:** SmarTap and TAGATAP. **Deliverable:** The canonical site serves public pages from TAGATAP with working assets and refreshes.
 
-- [ ] Deploy the TAGATAP renderer and SmarTap admin/marketing app to preview environments against development Convex.
-- [ ] Configure specific Vercel rewrites for `/p/:slug` and the renderer's built assets, plus direct admin navigation; preserve `/` and both demo URLs.
+- [x] Deploy the TAGATAP renderer and SmarTap admin/marketing app to preview environments against development Convex; both Vercel preview deployments reached Ready.
+- [x] Configure specific Vercel rewrites for `/p/:slug` and the renderer's built assets, plus direct admin navigation; local combined-route browser verification passed. Signed-in cloud verification remains below.
 - [ ] Configure the canonical origin used for copied links. Verify the rewrite keeps it in the browser address bar.
 - [ ] Test two published slugs, missing and unpublished slugs, deep-link refresh, image/font loading, and the same flows on preview URLs.
 - [ ] Review the working preview with the user and obtain deployment authorization.
@@ -124,7 +124,7 @@
 
 **Acceptance:** A copied `/p/:slug` URL works in a fresh browser and after refresh, with no per-client deployment.
 
-2026-10-16 progress: Both worktrees now contain Vercel routing configuration, and TAGATAP's built asset URLs use `/tagatap/` to avoid colliding with SmarTap's `/assets/`. A local combined-build browser check passed two person routes, missing/unpublished routes, refreshes, assets, homepage/demos/admin, and same-origin draft preview. These Phase 6 boxes remain open until deployment previews are created and the actual Vercel rewrites and signed-in admin are verified. The worktrees have no linked Vercel project or CLI login in this session.
+2026-10-16 progress: Both worktrees contain Vercel routing configuration, and TAGATAP's built asset URLs use `/tagatap/` to avoid colliding with SmarTap's `/assets/`. A local combined-build browser check passed two person routes, missing/unpublished routes, refreshes, assets, homepage/demos/admin, and same-origin draft preview. The authenticated CLI linked both projects and deployed protected previews: TAGATAP `smartap-tagatap-dopbfboso-brynn1-pngs-projects.vercel.app` and SmarTap `taga-mf901h613-brynn1-pngs-projects.vercel.app`. TAGATAP's preview passed a browser check with two mocked published profiles, refresh, images/styles, and unavailable states. SmarTap's preview rewrites to that protected destination, but the combined route needs a signed-in team browser check. An automation bypass token cannot authenticate the rewritten destination. Production deployment and real signed-in admin checks remain open. The renderer project's first CLI deployment also created a production alias without production Convex configuration; do not use it for client pages.
 
 ## Phase 7 — End-to-end and NFC launch check
 

@@ -2,9 +2,15 @@
 
 ## Current State Summary
 
-The SmarTap marketing site and demos remain in the main checkout. TASK-001 is in progress in isolated worktrees under `.qa/worktrees/`: TAGATAP and the SmarTap admin/editor pass local build and browser checks. The first development admin account exists. Phase 6 Vercel routing is configured and the combined built apps pass a local same-origin browser check, including the preview iframe; real Vercel preview deployment and signed-in browser verification remain pending. No published client page is live.
+The SmarTap marketing site and demos remain in the main checkout. TASK-001 is in progress in isolated worktrees under `.qa/worktrees/`. The first development admin account exists. Phase 6 protected Vercel previews are deployed for SmarTap and TAGATAP, and TAGATAP's preview passes browser checks with mocked published profiles. The user reported an error on the combined protected preview; the exact error is pending for diagnosis. Canonical production still serves only the marketing site and demos; no published client page is live.
 
 ## Entries
+
+- 2026-10-16: User clarified that admin should be an ordinary route on the existing SmarTap site at `https://smartap-png.vercel.app/admin`; the protected preview URL caused confusion. Read-only checks found canonical `/` 200 and `/admin` 404 because live Vercel still serves the marketing-only build. The admin route already exists in the isolated feature worktree; no production deployment or settings change was made in this session.
+
+- 2026-10-16: User reported an error opening the protected SmarTap `/p/preview` rewrite. Read-only diagnostics confirmed both deployments are Ready and target preview; unauthenticated requests to `/`, `/admin`, `/p/preview`, and renderer assets redirect to Vercel SSO as expected. Requested the exact browser error. No routing or protection settings changed pending that evidence.
+
+- 2026-10-16: Linked the existing `taga-tap` Vercel project and a new `smartap-tagatap` renderer project. Deployed protected previews with development Convex settings. TAGATAP's preview passed two mocked profile routes, refresh, assets/styles, and unavailable states. SmarTap's preview points its rewrite at the protected TAGATAP preview; a signed-in Vercel team browser check is pending. Revoked temporary test bypass tokens. The renderer project's first deployment created a production alias without production Convex configuration; it is not suitable for NFC links. Next: confirm the protected cross-project rewrite and signed-in admin, then review production configuration and deployment.
 
 - 2026-10-16: Prepared Phase 6 routing in the two worktrees. TAGATAP now builds renderer assets under `/tagatap/`; SmarTap has environment-specific Vercel external rewrites for public pages and renderer assets. A combined local built-app browser check passed two profile routes, unavailable routes, refreshes, images/styles, preserved marketing/demo/admin routes, and same-origin preview messaging. Next: connect Vercel, deploy both previews with development Convex, verify actual Vercel routing and signed-in admin, then request production review.
 

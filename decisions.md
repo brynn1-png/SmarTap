@@ -2,9 +2,13 @@
 
 ## Current State Summary
 
-Ship only the homepage, Starter demo, and Business demo in the current main checkout. The client-page system under development uses the existing TAGATAP template, Convex project `smartap-a93dc`, an admin dashboard, and stable `https://smartap-png.vercel.app/p/:slug` URLs. Track implementation in `.ai/tasks/TASK-001-client-page-system.md`. Phase 1 and the backend foundation are in isolated worktrees. The project's development deployment is `courteous-falcon-337`.
+Ship only the homepage, Starter demo, and Business demo from current SmarTap production. The client-page system under development uses the existing TAGATAP template, Convex project `smartap-a93dc`, an admin dashboard, and stable `https://smartap-png.vercel.app/p/:slug` URLs. Both isolated worktrees have protected Vercel previews. Production promotion awaits a signed-in combined preview review and production configuration. The Convex development deployment is `courteous-falcon-337`.
 
 ## Entries
+
+- 2026-10-16: Keep `/admin` on the existing SmarTap origin. The separate TAGATAP project renders client pages only; its deployment URL is an implementation detail, not an admin address. The user's requested public admin URL is `https://smartap-png.vercel.app/admin`.
+
+- 2026-10-16: Keep Vercel Authentication enabled on both preview projects while checking the same-team protected rewrite with a signed-in Vercel browser. Automatic approval review rejected a project-wide TAGATAP SSO disable because it would expose every deployment and that security change was not explicitly authorized. Do not use automation bypass as evidence that the browser rewrite works; Vercel does not forward that authentication to a protected destination. The first renderer deployment created an unconfigured production alias, which must not be used for NFC cards.
 
 - 2026-10-16: Reserve `/tagatap/` for renderer build assets so TAGATAP and the SmarTap marketing/admin build can share one browser origin without `/assets` collisions. Use Vercel's external rewrite for `/p/:slug` and `/tagatap/:path*`; set `TAGATAP_ORIGIN` per SmarTap deployment through Vercel environment settings. Keep the canonical copied NFC URL at `https://smartap-png.vercel.app/p/:slug`. Production promotion waits for a real preview review.
 
