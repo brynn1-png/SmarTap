@@ -13,7 +13,7 @@ SmarTap presents NFC business cards that open a contact page in a phone browser.
 
 ## Planned product direction
 
-`plan.md` describes a proposed first release in which an authorized admin creates and publishes business profiles with stable public links. It proposes a public page, admin sign-in, data storage, and access rules. None of that is implemented yet. Treat the plan as proposed requirements to review before implementation, not as evidence of current behavior. The personal Starter card remains a demo until its separate profile fields are defined.
+`plan.md` describes a proposed first release in which an authorized admin creates and publishes personal contact pages from the separate TAGATAP template, with stable URLs for NFC cards. It proposes an admin dashboard, Convex data and image storage, authentication, public pages, and access rules. None of that is implemented yet. Treat the plan as proposed requirements to review before implementation, not as evidence of current behavior. The existing Starter and Business pages remain demos.
 
 ## Terms and constraints
 
